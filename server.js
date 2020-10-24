@@ -1,14 +1,27 @@
+// Load all configuration from '.env' file
+require('dotenv').config()
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/subscribers", {
+// Create a connection to MongoDB using mongoose
+mongoose.connect(process.env.DATABASE_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
+
+// Prompts an error message on error
 db.on("error", (error) => console.error(error));
+
+// Prompts a message if successfully connected to MongoDB
 db.once("open", () => console.log("🔌 Successfully connected to MongoDB"));
 
-app.listen(6000, () => console.log("🚀 Server is running on port 6000"));
+app.use(express.json());
+const subscribersRouter = require('./routes/subscribers');
+app.use('/subscribers', subscribersRouter);
+
+// App will run on port 6000 and it will log a message
+app.listen(4000, () => console.log("🚀 Server is running on port 4000"));
