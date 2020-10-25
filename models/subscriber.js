@@ -1,20 +1,20 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// Create a Schema
+// Create a MongoDB Schema
 const subscriberSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    subscribedToChannel: {
-        type: String,
-        required: true,
-    },
-    subscribedDate: {
-        type: Date,
-        required: true,
-        default: Date.now,
-    },
+	name: {
+		type: String,
+		required: true,
+	},
+	subscribedToChannel: {
+		type: String,
+		required: true,
+	},
+	subscribedDate: {
+		type: Date,
+		required: true,
+		default: Date.now,
+	},
 });
 
-module.exports = mongoose.model('Subscriber', subscriberSchema);
+module.exports = mongoose.model("Subscriber", subscriberSchema);
