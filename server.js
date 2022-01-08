@@ -23,7 +23,7 @@ app.use(express.json());
 const subscribersRouter = require("./routes/subscribers");
 app.use("/subscribers", subscribersRouter);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
 
 // App will run on port 6000 and it will log a message
 app.listen(PORT, () => console.log("🚀 Server is running on port 4000"));
