@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  build: .
+  container_name: youtube-rest-api_ctr
+  environment:
+    DATABASE_URL: mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin
+    PORT: 4000
+  ports:
+    - 4000:4000
