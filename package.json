@@ -4,7 +4,8 @@
 	"description": "A youtuber's Restful API",
 	"main": "index.js",
 	"scripts": {
-		"devStart": "nodemon server.js"
+		"devStart": "nodemon server.js",
+		"start": "node server.js"
 	},
 	"repository": "https://github.com/kevinadhiguna/youtuber-rest-api.git",
 	"author": "kevin adhiguna",
