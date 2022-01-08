@@ -5,6 +5,6 @@ services:
   container_name: youtube-rest-api_ctr
   environment:
     DATABASE_URL: ${DATABASE_URL}
-    PORT: ${PORT}
+    PORT: ${PORT:-4000}
   ports:
     - 4000:4000
