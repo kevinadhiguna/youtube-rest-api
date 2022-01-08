@@ -1,0 +1,25 @@
+#############################################################
+#                                                            #
+# Following files/directories are excluded from docker image #
+#                                                            #
+##############################################################
+
+### Git, Log, Cache ###
+.git
+.cache
+*.log
+
+## GitHub/GitLab workflows (CI/CD) ###
+.github
+.gitlab-ci.yml
+.gitlab-ci.yaml
+
+### docker-compose ###
+docker-compose.yml
+docker-compose.yaml
+
+### Project documentation (Markdown) ###
+README.md
+
+### VSCode ###
+.vscode/
