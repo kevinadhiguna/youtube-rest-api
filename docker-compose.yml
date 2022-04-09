@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: youtube-rest-api_img
     container_name: youtube-rest-api_ctr
     environment:
       DATABASE_URL: ${DATABASE_URL:-mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin}
