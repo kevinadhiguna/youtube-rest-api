@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   youtube-rest-api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: youtube-rest-api_ctr
     environment:
       DATABASE_URL: ${DATABASE_URL:-mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin}
