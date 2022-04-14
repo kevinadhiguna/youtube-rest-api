@@ -27,4 +27,6 @@ const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || "localhost";
 
 // App will run on port 6000 and it will log a message
-const server = app.listen(PORT, HOSTNAME, () => { console.log(`🚀 Server is running on ${HOSTNAME}:${PORT}`); });
+const server = app.listen(PORT, HOSTNAME, () => {
+  console.log(`🚀 Server is running on ${HOSTNAME}:${PORT}`);
+});
