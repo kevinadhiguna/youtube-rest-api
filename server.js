@@ -24,7 +24,7 @@ const subscribersRouter = require("./routes/subscribers");
 app.use("/subscribers", subscribersRouter);
 
 const PORT = process.env.PORT || 4000;
-const HOST = process.env.HOST || "localhost";
+const HOSTNAME = process.env.HOSTNAME || "localhost";
 
 // App will run on port 6000 and it will log a message
-app.listen(PORT, () => console.log("🚀 Server is running on port 4000"));
+app.listen(PORT, HOSTNAME, () => console.log("🚀 Server is running on port 4000"));
