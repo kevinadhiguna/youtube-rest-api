@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"devStart": "nodemon server.js",
-		"start": "node server.js"
+		"start": "node server.js",
+    "check": "prettier --check \"./**/*.{js,json,md,yml}\""
 	},
 	"repository": "https://github.com/kevinadhiguna/youtuber-rest-api.git",
 	"author": "kevin adhiguna",
