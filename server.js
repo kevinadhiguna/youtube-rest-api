@@ -7,8 +7,8 @@ const mongoose = require("mongoose");
 
 // Create a connection to MongoDB using mongoose
 mongoose.connect(process.env.DATABASE_URL, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
@@ -27,4 +27,4 @@ const PORT = process.env.PORT || 4000;
 const HOSTNAME = process.env.HOSTNAME || "localhost";
 
 // App will run on port 6000 and it will log a message
-app.listen(PORT, HOSTNAME, () => console.log("🚀 Server is running on port 4000"));
+const server = app.listen(PORT, HOSTNAME, () => { console.log(`🚀 Server is running on ${HOSTNAME}:${PORT}`); });
