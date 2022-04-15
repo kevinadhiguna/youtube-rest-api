@@ -4,6 +4,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const { createHttpTerminator } = require("http-terminator");
 
 // Create a connection to MongoDB using mongoose
 mongoose.connect(process.env.DATABASE_URL, {
@@ -30,3 +31,25 @@ const HOSTNAME = process.env.HOSTNAME || "localhost";
 const server = app.listen(PORT, HOSTNAME, () => {
   console.log(`🚀 Server is running on ${HOSTNAME}:${PORT}`);
 });
+
+const httpTerminator = createHttpTerminator({ server });
+
+async function shutdown(signalOrEvent) {
+  console.log(`\n${signalOrEvent} occured, shutting down...`);
+  try {
+    await httpTerminator.terminate();
+    console.log("Terminated the server successfully !");
+    process.exit(0);
+  } catch(errorShuttingdown) {
+    console.error(`Error shutting down the server : ${errorShuttingdown}`)
+    process.exit(1);
+  }
+}
+
+// Signals
+process.on("SIGINT", shutdown);
+process.on("SIGTERM", shutdown);
+
+// Events
+process.on("uncaughtException", shutdown);
+process.on("unhandledRejection", shutdown);
