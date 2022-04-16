@@ -4,7 +4,10 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const compression = require("compression");
 const { createHttpTerminator } = require("http-terminator");
+
+app.use(compression());
 
 // Create a connection to MongoDB using mongoose
 mongoose.connect(process.env.DATABASE_URL, {
