@@ -5,9 +5,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const compression = require("compression");
+const helmet = require("helmet");
 const { createHttpTerminator } = require("http-terminator");
 
 app.use(compression());
+app.use(helmet());
 
 // Create a connection to MongoDB using mongoose
 mongoose.connect(process.env.DATABASE_URL, {
