@@ -11,8 +11,10 @@ const { createHttpTerminator } = require("http-terminator");
 app.use(compression());
 app.use(helmet());
 
+const DATABASE_URL = process.env.DATABASE_URL || "mongo://localhost:27017";
+
 // Create a connection to MongoDB using mongoose
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
