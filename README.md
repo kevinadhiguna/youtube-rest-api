@@ -4,6 +4,15 @@ A straightforward and effortless Restful API powered by ExpressJS, NodeJS, and, 
 
 <br />
 
+## How to Run
+
+In development mode :
+```
+yarn devStart
+```
+
+<br />
+
 ## Format code
 
 You can format code using prettier :
