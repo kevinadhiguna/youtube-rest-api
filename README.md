@@ -6,7 +6,12 @@ A straightforward and effortless Restful API powered by ExpressJS, NodeJS, and, 
 
 ## How to Run
 
-In development mode :
+Install dependencies :
+```
+yarn
+```
+
+Run the app in development mode :
 ```
 yarn devStart
 ```
