@@ -27,4 +27,8 @@ yarn run check
 
 <br />
 
+## Reference
+
+- [Build A REST API With Node.js, Express, & MongoDB - Quick by Web Dev Simplified](https://youtu.be/fgTGADljAeg)
+
 [![Visits Badge](https://badges.pufler.dev/visits/kevinadhiguna/youtube-rest-api)](https://github.com/kevinadhiguna)
